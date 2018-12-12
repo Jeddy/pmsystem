@@ -1,7 +1,7 @@
 <?php
 
 // 首页
-Route::get('/', 'IndexController@index')->name('root');
+Route::get('/', 'ProfileController@index')->name('root');
 
 // 登入登出
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -17,3 +17,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+// 我的
+Route::get('/profile', 'ProfileController@index')->name('profile');
+Route::get('/settings', 'ProfileController@settings')->name('settings');

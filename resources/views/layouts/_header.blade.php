@@ -14,10 +14,12 @@
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
-
+                <li><a href="">需求</a></li>
+                <li><a href="">需求</a></li>
+                <li><a href="">需求</a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right navbar-userinfo">
                 @guest
                     <li><a href="{{ route('login') }}">登录</a></li>
                     <li><a href="{{ route('register') }}">注册</a></li>
@@ -28,6 +30,8 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ route('profile') }}">我的主页</a></li>
+                            <li><a href="{{ route('settings') }}">账号设置</a></li>
                             <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">退出登录</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
