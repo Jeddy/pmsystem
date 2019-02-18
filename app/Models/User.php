@@ -38,4 +38,15 @@ class User extends Authenticatable
     {
         $this->notify(new RestPasswordNotification($token));
     }
+
+    /**
+     * 获取用户关联的公司
+     *
+     */
+    public function corps() {
+        return $this->belongsToMany(Corp::class, 'user_corps', 'uid', 'corp_id');
+    }
+
+    
+
 }
