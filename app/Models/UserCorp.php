@@ -23,6 +23,7 @@ class UserCorp extends Model
      * @return boolean
      */
     public function setDefaultCorp($uid, $corp_id) {
+        $this->where(['uid' => $uid])->update(['is_default' => 0]);
         return $this->where(['uid' => $uid, 'corp_id' => $corp_id])->update(['is_default' => 1]);
     }
 
@@ -37,9 +38,7 @@ class UserCorp extends Model
     		$default = $this->where('uid', $uid)->first();
     		if(!$default) {
     			return null;
-    		} else {
-    			$this->setDefaultCorp($uid, $default->corp_id);
-    		}
+            }
     	}
     	return (new Corp)->getCorpById($default->corp_id);
     }

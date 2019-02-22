@@ -14,6 +14,37 @@ body {
 	width: 100%;
 }
 
+.navbar-default {
+	.navbar-main {
+		margin-left: 20px;
+		li a.active {
+			color: #3097D1;
+			font-weight: bold;
+		}
+	}
+}
+
 .navbar-userinfo {
 	margin-right: -5px;
+
+	.notifications-badge {
+		margin-top: -2px;
+	}
+
+	.badge-fade {
+		background: #b2b2b2;
+	}
+	.badge-hint {
+		background: red;
+	}
 }
+
+.spaces-list {
+	.thumbnail {
+		img {
+			width: 100%;
+			max-height: 150px;
+		}
+	}
+}
+

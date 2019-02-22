@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', '我的')
+@section('title', $space->name)
 
 @section('content')
 
-个人中心
+xxx空间
 
 @stop

@@ -8,20 +8,18 @@ use App\Models\UserCorp;
 
 class SpaceController extends Controller
 {
-	// 工作空间列表
-    public function index(Request $request) {
-    	$corp = (new UserCorp)->getDefaultCorp($request->user()->uid);
-    	if(!$corp) { // 用户没有关联公司
-    		// todo
-    	}
-    	$spaces = $corp->spaces()->where('status', '<>', 2)->get();
-    	return view('space.list', compact('spaces'));
+    /**
+     * xxx空间主页
+     */
+    public function index(Space $space, Request $request) {
+    	return view('space.index', compact('space'));
     }
 
-    // 工作空间
-    public function content(Space $space, Request $request) {
-
-    	return view('space.content', compact('space'));
+    /**
+     * 创建空间
+     */
+    public function create() {
+        return view('space.create');
     }
 
 }

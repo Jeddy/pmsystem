@@ -16,10 +16,11 @@ class CreateCorpsTable extends Migration
         Schema::create('corps', function (Blueprint $table) {
             $table->increments('corp_id')->comment('主体ID');
             $table->string('name', 32)->comment('主体名');
-            $table->string('contact_name', 32)->comment('联系人');
-            $table->string('contact_phone', 16)->comment('联系人手机');
+            $table->unsignedInteger('uid')->comment('主体联系人');
             $table->boolean('status')->comment('状态，0有效，1 无效')->default(0);
             $table->timestamps();
+
+            $table->foreign('uid')->references('uid')->on('users');
         });
         \DB::statement("ALTER TABLE `corps` COMMENT '主体'");
     }

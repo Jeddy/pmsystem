@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SpaceSeeder extends Seeder
+class DepartmentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class SpaceSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Space::class, 100)->create();
+        factory(\App\Models\Department::class, 50)->create();
     }
 }
